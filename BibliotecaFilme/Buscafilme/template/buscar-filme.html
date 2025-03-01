@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscar Filme</title>
+</head>
+<body>
+    <h1>Buscar Filme na OMDb</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="titulo" placeholder="Título do Filme" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if filme_info %}
+        <h2>{{ filme_info.Title }}</h2>
+        <p><strong>Ano:</strong> {{ filme_info.Year }}</p>
+        <p><strong>Diretor:</strong> {{ filme_info.Director }}</p>
+        <p><strong>Gênero:</strong> {{ filme_info.Genre }}</p>
+        <p><strong>Sinopse:</strong> {{ filme_info.Plot }}</p>
+    {% endif %}
+</body>
+</html>
