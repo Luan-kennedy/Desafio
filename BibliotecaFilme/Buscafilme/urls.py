@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('filme/<int:filme_id>/', views.filme_detail, name='filme_detail'),
+    path('filme/<str:filme_id>/', views.filme_detail, name='filme_detail'),
 
     # CRUD para Filme
     path('filme/novo/', views.filme_create, name='filme_create'),
