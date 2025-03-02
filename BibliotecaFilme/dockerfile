@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+
+WORKDIR /BibliotecaFilme
+
+COPY . /BibliotecaFilme/
+COPY requirements.txt /BibliotecaFilme/requirements.txt
+
+RUN pip install --upgrad pip
+RUN pip install -r /BibliotecaFilme/requirements.txt
+
+
+EXPOSE 8000
+
+CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
